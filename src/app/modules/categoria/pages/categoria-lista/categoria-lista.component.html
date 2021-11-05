@@ -1,1 +1,12 @@
+<div class="col-md-12" *ngFor="let categoria of categorias">
+    <div class="col-md-3">
+        {{categoria.id}}
+    </div>
+    <div class="col-md-6">
+        {{categoria.descricao}}
+    </div>
+    <div class="col-md-3">
+        <button (click)="visualizar(categoria)">Visualizar</button>
+    </div>
+</div>
 

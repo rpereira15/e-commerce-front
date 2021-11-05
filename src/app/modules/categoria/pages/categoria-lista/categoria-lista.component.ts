@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { RouteService } from 'src/app/commons/services/route.service';
 import { CategoriaService } from '../../service/categoria.service';
 
 @Component({
@@ -8,8 +9,10 @@ import { CategoriaService } from '../../service/categoria.service';
 })
 export class CategoriaListaComponent implements OnInit{
 
-  constructor(private categoriaService: CategoriaService) { }
+  constructor(private categoriaService: CategoriaService,
+    private routeService: RouteService) { }
   
+  categorias: any[] = [];
 
   ngOnInit(): void {
     this.getAll();
@@ -18,8 +21,13 @@ export class CategoriaListaComponent implements OnInit{
   getAll() {
     this.categoriaService.getAll()
     .then(result => {
-      console.log(result);
+      this.categorias = result.conteudo;
     })
+  }
+
+  visualizar(categoria: any) {
+    console.log(categoria);
+    this.routeService.navigate(`/categoria/visualizar/${categoria.id}`)
   }
 
 }
