@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { IPageConfig } from 'src/app/commons/models/pagination.model';
 import { RouteService } from 'src/app/commons/services/route.service';
+import { ICategoria } from '../../model/categoria.model';
 import { CategoriaService } from '../../service/categoria.service';
 
 @Component({
@@ -12,7 +14,7 @@ export class CategoriaListaComponent implements OnInit{
   constructor(private categoriaService: CategoriaService,
     private routeService: RouteService) { }
   
-  categorias: any[] = [];
+  categorias = {} as IPageConfig<ICategoria>;
 
   ngOnInit(): void {
     this.getAll();
@@ -21,13 +23,16 @@ export class CategoriaListaComponent implements OnInit{
   getAll() {
     this.categoriaService.getAll()
     .then(result => {
-      this.categorias = result.conteudo;
+      this.categorias = result;
     })
   }
 
   visualizar(categoria: any) {
-    console.log(categoria);
-    this.routeService.navigate(`/categoria/visualizar/${categoria.id}`)
+    this.routeService.navigate(`/categoria/visualizar/${categoria.id}`);
+  }
+
+  cadastrarNovaCategoria(){
+    this.routeService.navigate(`/categoria/cadastrar`);
   }
 
 }

@@ -1,4 +1,8 @@
-<div class="col-md-12" *ngFor="let categoria of categorias">
+<div class="col-md-12">
+    <button (click)="cadastrarNovaCategoria()" 
+    class="btn btn-success">Cadastrar Nova Categoria</button>
+</div>
+<div class="col-md-12" *ngFor="let categoria of categorias.conteudo">
     <div class="col-md-3">
         {{categoria.id}}
     </div>

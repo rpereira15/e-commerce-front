@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
+import { CategoriaCadastrarComponent } from './pages/categoria-cadastrar/categoria-cadastrar.component';
 import { CategoriaListaComponent } from "./pages/categoria-lista/categoria-lista.component";
 import { CategoriaVisualizarComponent } from './pages/categoria-visualizar/categoria-visualizar.component';
 
@@ -15,7 +16,8 @@ const routes: Routes = [
         children: [
             { path: '', redirectTo: '/categoria/lista', pathMatch: 'full' },
             { path: 'lista', component: CategoriaListaComponent },
-            { path: 'visualizar/:idCategoria', component: CategoriaVisualizarComponent }
+            { path: 'visualizar/:idCategoria', component: CategoriaVisualizarComponent },
+            { path: 'cadastrar', component: CategoriaCadastrarComponent }
         ]
     }
 ];

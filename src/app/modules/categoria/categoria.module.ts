@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { CategoriaListaComponent } from './pages/categoria-lista/categoria-lista.component';
 import { CategoriaRoutingModule, GenericRouterComponent } from './categoria-routing.module';
 import { CategoriaVisualizarComponent } from './pages/categoria-visualizar/categoria-visualizar.component';
+import { CategoriaCadastrarComponent } from './pages/categoria-cadastrar/categoria-cadastrar.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -10,11 +12,13 @@ import { CategoriaVisualizarComponent } from './pages/categoria-visualizar/categ
   declarations: [
     GenericRouterComponent,
     CategoriaListaComponent,
-    CategoriaVisualizarComponent
+    CategoriaVisualizarComponent,
+    CategoriaCadastrarComponent
   ],
   imports: [
     CommonModule,
-    CategoriaRoutingModule
+    CategoriaRoutingModule,
+    FormsModule,
   ]
 })
 export class CategoriaModule { }
