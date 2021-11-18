@@ -31,6 +31,10 @@ export class CategoriaListaComponent implements OnInit{
     this.routeService.navigate(`/categoria/visualizar/${categoria.id}`);
   }
 
+  atualizar(categoria: any) {
+    this.routeService.navigate(`/categoria/atualizar/${categoria.id}`);
+  }
+
   cadastrarNovaCategoria(){
     this.routeService.navigate(`/categoria/cadastrar`);
   }

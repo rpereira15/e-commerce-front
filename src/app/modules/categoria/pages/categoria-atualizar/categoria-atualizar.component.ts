@@ -1,27 +1,37 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { RouteService } from 'src/app/commons/services/route.service';
-import { ICadastroAtualizacaoCategoria } from '../../model/categoria.model';
+import { ICategoria } from '../../model/categoria.model';
 import { CategoriaService } from '../../service/categoria.service';
 
 @Component({
-  selector: 'app-categoria-cadastrar',
-  templateUrl: './categoria-cadastrar.component.html',
-  styleUrls: ['./categoria-cadastrar.component.css']
+  selector: 'app-categoria-atualizar',
+  templateUrl: './categoria-atualizar.component.html',
+  styleUrls: ['./categoria-atualizar.component.css']
 })
-export class CategoriaCadastrarComponent implements OnInit {
+export class CategoriaAtualizarComponent implements OnInit {
 
   constructor(private categoriaService: CategoriaService,
+    private activatedRoute: ActivatedRoute,
     private routeService: RouteService) { }
 
-  categoria = {} as ICadastroAtualizacaoCategoria;
+  categoria = {} as ICategoria;
   error = {} as any;
-  
+
   ngOnInit(): void {
+    this.getOne(this.activatedRoute.snapshot.params.idCategoria);
     this.error.message = '';
   }
 
+  getOne(id: number) {
+    this.categoriaService.getOne(id)
+    .then(result => {
+      this.categoria = result;
+    })
+  }
+
   salvar() {
-    this.categoriaService.salvarCategoria(this.categoria)
+    this.categoriaService.atualizarCategoria(this.categoria)
       .then(() => {
         this.routeService.navigate('/categoria/lista');
       })

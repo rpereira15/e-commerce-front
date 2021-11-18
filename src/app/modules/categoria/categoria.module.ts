@@ -5,6 +5,7 @@ import { CategoriaRoutingModule, GenericRouterComponent } from './categoria-rout
 import { CategoriaVisualizarComponent } from './pages/categoria-visualizar/categoria-visualizar.component';
 import { CategoriaCadastrarComponent } from './pages/categoria-cadastrar/categoria-cadastrar.component';
 import { FormsModule } from '@angular/forms';
+import { CategoriaAtualizarComponent } from './pages/categoria-atualizar/categoria-atualizar.component';
 
 
 
@@ -13,7 +14,8 @@ import { FormsModule } from '@angular/forms';
     GenericRouterComponent,
     CategoriaListaComponent,
     CategoriaVisualizarComponent,
-    CategoriaCadastrarComponent
+    CategoriaCadastrarComponent,
+    CategoriaAtualizarComponent
   ],
   imports: [
     CommonModule,

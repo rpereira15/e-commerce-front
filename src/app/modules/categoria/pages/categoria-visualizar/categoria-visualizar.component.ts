@@ -12,6 +12,7 @@ export class CategoriaVisualizarComponent implements OnInit {
 
   constructor(private categoriaService: CategoriaService,
     private activatedRoute: ActivatedRoute) { }
+
   categoria = {} as ICategoria;
 
   ngOnInit(): void {
@@ -21,7 +22,6 @@ export class CategoriaVisualizarComponent implements OnInit {
   getOne(id: number) {
     this.categoriaService.getOne(id)
     .then(result => {
-      console.log(result);
       this.categoria = result;
     })
   }
