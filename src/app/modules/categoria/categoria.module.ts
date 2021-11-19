@@ -6,6 +6,7 @@ import { CategoriaVisualizarComponent } from './pages/categoria-visualizar/categ
 import { CategoriaCadastrarComponent } from './pages/categoria-cadastrar/categoria-cadastrar.component';
 import { FormsModule } from '@angular/forms';
 import { CategoriaAtualizarComponent } from './pages/categoria-atualizar/categoria-atualizar.component';
+import { CategoriaFormComponent } from './components/categoria-form/categoria-form.component';
 
 
 
@@ -15,7 +16,8 @@ import { CategoriaAtualizarComponent } from './pages/categoria-atualizar/categor
     CategoriaListaComponent,
     CategoriaVisualizarComponent,
     CategoriaCadastrarComponent,
-    CategoriaAtualizarComponent
+    CategoriaAtualizarComponent,
+    CategoriaFormComponent
   ],
   imports: [
     CommonModule,

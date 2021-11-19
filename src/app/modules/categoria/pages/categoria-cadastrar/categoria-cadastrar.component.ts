@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouteService } from 'src/app/commons/services/route.service';
-import { ICadastroAtualizacaoCategoria } from '../../model/categoria.model';
+import { ICadastroAtualizacaoCategoria, ICategoria } from '../../model/categoria.model';
 import { CategoriaService } from '../../service/categoria.service';
 
 @Component({
@@ -13,15 +13,15 @@ export class CategoriaCadastrarComponent implements OnInit {
   constructor(private categoriaService: CategoriaService,
     private routeService: RouteService) { }
 
-  categoria = {} as ICadastroAtualizacaoCategoria;
+  
   error = {} as any;
   
   ngOnInit(): void {
     this.error.message = '';
   }
 
-  salvar() {
-    this.categoriaService.salvarCategoria(this.categoria)
+  salvar($event: ICadastroAtualizacaoCategoria) {
+    this.categoriaService.salvarCategoria($event)
       .then(() => {
         this.routeService.navigate('/categoria/lista');
       })
@@ -31,9 +31,7 @@ export class CategoriaCadastrarComponent implements OnInit {
       });
   }
 
-  disabled() {
-    return !this.categoria.descricao || this.categoria.descricao.length > 30;
-  }
+  
 
   limpaErro() {
     this.error.message = '';

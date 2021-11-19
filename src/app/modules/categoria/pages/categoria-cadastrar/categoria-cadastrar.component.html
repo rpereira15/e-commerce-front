@@ -1,4 +1,4 @@
-<div class="col-md-12">Descrição:</div>
+<!-- <div class="col-md-12">Descrição:</div>
 <div class="col-md-12">
     <input class="form-input col-md-6" type="text" 
     (input)="limpaErro()"
@@ -9,7 +9,10 @@
         Salvar
     </button>
 </div>
+-->
+<app-categoria-form (salvaCategoriaEventPublisher)="salvar($event)">
 
+</app-categoria-form>
 <div class="col-md-12" *ngIf="error.message.length > 0">
     <span style="color: red;">{{error.message}}</span>
 </div>

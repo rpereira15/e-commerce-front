@@ -30,8 +30,8 @@ export class CategoriaAtualizarComponent implements OnInit {
     })
   }
 
-  salvar() {
-    this.categoriaService.atualizarCategoria(this.categoria)
+  salvar($event: ICategoria) {
+    this.categoriaService.atualizarCategoria($event)
       .then(() => {
         this.routeService.navigate('/categoria/lista');
       })
@@ -41,9 +41,6 @@ export class CategoriaAtualizarComponent implements OnInit {
       });
   }
 
-  disabled() {
-    return !this.categoria.descricao || this.categoria.descricao.length > 30;
-  }
 
   limpaErro() {
     this.error.message = '';
