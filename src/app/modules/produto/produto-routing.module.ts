@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
+import { ProdutoCadastrarComponent } from './pages/produto-cadastrar/produto-cadastrar.component';
 import { ProdutoListaComponent } from "./pages/produto-lista/produto-lista.component";
 
 @Component({
@@ -13,7 +14,8 @@ const routes: Routes = [
         path: 'produto',
         children: [
             { path: '', redirectTo: '/produto/lista', pathMatch: 'full' },
-            { path: 'lista', component: ProdutoListaComponent }
+            { path: 'lista', component: ProdutoListaComponent },
+            { path: 'cadastrar', component: ProdutoCadastrarComponent }
         ]
     }
 ];

@@ -29,6 +29,12 @@ export class CategoriaService {
     .toPromise();
   }
 
+  getFullCategoria(): Promise<ICategoria[]> {
+    return this.httpClient
+    .get<ICategoria[]>('http://localhost:8080/categoria/full-categoria')
+    .toPromise();
+  }
+
   getOne(id: number): Promise<ICategoria> {
     return this.httpClient
     .get<ICategoria>(`http://localhost:8080/categoria/${id}`)
