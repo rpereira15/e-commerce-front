@@ -32,7 +32,6 @@ export class CategoriaCadastrarComponent implements OnInit {
   }
 
   
-
   limpaErro() {
     this.error.message = '';
   }
