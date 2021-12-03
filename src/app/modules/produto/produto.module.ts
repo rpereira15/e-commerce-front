@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ProdutoListaComponent } from './pages/produto-lista/produto-lista.component';
 import { GenericRouterComponent, ProdutoRoutingModule } from './produto-routing.module';
 import { ProdutoCadastrarComponent } from './pages/produto-cadastrar/produto-cadastrar.component';
+import { FormsModule } from '@angular/forms';
+import { ProdutoAtualizarComponent } from './pages/produto-atualizar/produto-atualizar.component';
 
 
 
@@ -10,11 +12,13 @@ import { ProdutoCadastrarComponent } from './pages/produto-cadastrar/produto-cad
   declarations: [
     GenericRouterComponent,
     ProdutoListaComponent,
-    ProdutoCadastrarComponent
+    ProdutoCadastrarComponent,
+    ProdutoAtualizarComponent
   ],
   imports: [
     CommonModule,
-    ProdutoRoutingModule
+    ProdutoRoutingModule,
+    FormsModule
   ]
 })
 export class ProdutoModule { }
